@@ -1,0 +1,14 @@
+-- 5
+select primeiro_nome, salario,
+(select avg(salario) from funcionario) as media,
+(salario - (select avg(salario) from funcionario)) as variacao
+from funcionario;
+
+select * from 
+
+select avg(horas)media_hr_trab from trabalha_em as t 
+left join funcionario as f on (t.cpf_funcionario=f.cpf) -- err
+left join departamento as d on (d.num_depto=f.num_depto)
+
+
+

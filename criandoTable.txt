@@ -1,0 +1,16 @@
+drop table if exists funcionario;
+create table funcionario (
+	primeiro_nome varchar(15) not null,
+	nome_meio char,
+	ultimo_nome varchar(15) not null,
+	cpf char(13) not null,
+	dt_nacimento date,
+	endereco varchar(30),
+	sexo char,
+	salario decimal(10,2),
+	cpf_supervisor char(13),
+  	num_departamento int not null check(num_departamento > 0 AND num_departamento < 25),
+	nome_departamento int not null,
+	ativo int default 1,
+  	primary key (cpf)
+);

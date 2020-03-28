@@ -1,0 +1,38 @@
+select * from funcionario as f right join departamento as d 
+on (f.num_depto=d.num_depto)
+	where d.num_depto is not null;
+
+select * from funcionario as f left join departamento as d 
+on (f.num_depto=d.num_depto);
+
+select * from funcionario as f full join departamento as d 
+on (f.num_depto=d.num_depto);
+
+select * from funcionario as f join departamento as d 
+on (f.num_depto=d.num_depto);
+
+select * from funcionario as f inner join departamento as d 
+on (f.num_depto=d.num_depto);
+
+select t.*, f.* from trabalha_em t left join funcionario f on (f.cpf=t.cpf_funcionario)
+left join projeto p on (p.num_projeto=t.num_projeto);
+
+------- FUNCOES DE AGREGACAO---------------------
+select count(*) from dependente; --- funcao q conta dados de tbs
+
+select count(nome_meio) from funcionario; -- conta atributos especificos da tabela
+
+select count(distinct nome_meio) from funcionario; -- conta atributos especificos da tabela q nao se repetem
+
+select sum(salario) from funcionario; --- funcao soma atributos de uma funcao
+
+select avg(salario) from funcionario; -- funcao tira media de atributos
+
+select sum(salario)folha_empresa from funcionario; -- renomeia partes da tabela 
+
+select min(salario) from funcionario; -- funcao busca menor valor de um atributo
+
+select max(salario) from funcionario; -- funcao busca maior valor funcao de atributo
+
+select count(*) from funcionario f left join departamento d on -- conta o num de funcionarios  
+(f.num_depto=d.num_depto) where d.nome_departamento ='Matriz';-- de um departamento especifico
